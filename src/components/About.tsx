@@ -3,12 +3,12 @@ import AnimatedSection from "./AnimatedSection";
 
 const About = () => {
   return (
-    <section id="about" className="section bg-secondary">
+    <section id="about" className="section bg-white">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <AnimatedSection animation="fade-in-right">
             <div className="relative">
-              <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary/10 rounded-lg -z-10"></div>
+              <div className="absolute -top-6 -left-6 w-24 h-24 bg-accent rounded-lg -z-10"></div>
               <div className="relative overflow-hidden rounded-lg">
                 <img
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1587&auto=format&fit=crop"
@@ -16,16 +16,14 @@ const About = () => {
                   className="w-full h-auto"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-lg -z-10"></div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-accent rounded-lg -z-10"></div>
             </div>
           </AnimatedSection>
           
           <AnimatedSection animation="fade-in-left">
-            <span className="inline-block text-sm font-medium tracking-wider px-3 py-1 mb-6 rounded-full bg-white text-muted-foreground">
-              About Me
-            </span>
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 tracking-tight">
-              Passionate about creating meaningful digital experiences
+            <span className="badge bg-accent text-accent-foreground mb-4">About Me</span>
+            <h2 className="heading-md mb-6">
+              Passionate about creating <span className="text-primary">meaningful</span> digital experiences
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>

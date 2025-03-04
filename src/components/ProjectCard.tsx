@@ -26,9 +26,9 @@ const ProjectCard = ({
       delay={0.1 * index}
       className="group"
     >
-      <div className="rounded-lg overflow-hidden hover-card">
+      <div className="rounded-xl overflow-hidden hover-card border border-border">
         <div className="relative h-64 sm:h-80 overflow-hidden">
-          <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+          <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
             {link && (
               <a
                 href={link}
@@ -52,7 +52,7 @@ const ProjectCard = ({
             {tags.map((tag, i) => (
               <span
                 key={i}
-                className="px-2 py-1 bg-secondary text-xs font-medium rounded-full text-muted-foreground"
+                className="px-2 py-1 bg-accent text-xs font-medium rounded-full text-primary"
               >
                 {tag}
               </span>

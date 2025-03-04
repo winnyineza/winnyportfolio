@@ -5,50 +5,51 @@ import ProjectCard from "./ProjectCard";
 // Sample project data - you can replace this with your actual projects
 const projects = [
   {
-    title: "Modern E-commerce App",
-    description: "A comprehensive e-commerce platform with seamless user experience and innovative UI design.",
+    title: "Digital Marketing Campaign",
+    description: "Comprehensive digital strategy with a focus on engagement and conversion optimization.",
     image: "https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?q=80&w=1740&auto=format&fit=crop",
-    tags: ["UI/UX Design", "Web Development", "E-commerce"],
+    tags: ["Marketing", "Strategy", "Analytics"],
     link: "#"
   },
   {
-    title: "Creative Agency Rebrand",
-    description: "Complete brand identity redesign for a digital creative agency, including logo, website, and social media.",
+    title: "Brand Identity Redesign",
+    description: "Complete brand identity overhaul including logo, visual identity system, and brand guidelines.",
     image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1740&auto=format&fit=crop",
-    tags: ["Identity Design", "Branding", "Web Design"],
+    tags: ["Branding", "Design", "Strategy"],
     link: "#"
   },
   {
-    title: "Social Media Campaign",
-    description: "Strategic social media campaign that increased engagement by 300% for a lifestyle brand.",
+    title: "Social Media Growth Campaign",
+    description: "Strategic social media campaign that increased engagement by 300% and followers by 150%.",
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1740&auto=format&fit=crop",
     tags: ["Social Media", "Content Strategy", "Analytics"],
     link: "#"
   },
   {
-    title: "Fitness Mobile App",
-    description: "User-centered mobile application designed to track workouts and provide personalized fitness plans.",
+    title: "UX Research & Design",
+    description: "Comprehensive user research, testing, and interface design that improved conversion rates by 45%.",
     image: "https://images.unsplash.com/photo-1640622332810-039ad9c96802?q=80&w=1740&auto=format&fit=crop",
-    tags: ["App Development", "UI/UX Design", "Fitness"],
+    tags: ["UX Research", "UI Design", "Prototyping"],
     link: "#"
   }
 ];
 
 const Projects = () => {
   return (
-    <section id="work" className="section bg-secondary">
+    <section id="work" className="section bg-white">
       <div className="container">
-        <AnimatedSection className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 tracking-tight">
-            Selected Work
+        <AnimatedSection className="mb-16">
+          <span className="badge bg-accent text-accent-foreground mb-4">Selected Work</span>
+          <h2 className="heading-md mb-5">
+            Transforming Ideas into <span className="text-primary">Impact</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl">
             A curated collection of my projects spanning UI/UX design, 
             web & app development, identity design, and social media management.
           </p>
         </AnimatedSection>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {projects.map((project, index) => (
             <ProjectCard
               key={index}

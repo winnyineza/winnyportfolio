@@ -28,13 +28,14 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="section">
+    <section id="skills" className="section bg-secondary">
       <div className="container">
-        <AnimatedSection className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 tracking-tight">
-            Areas of Expertise
+        <AnimatedSection className="mb-16">
+          <span className="badge bg-white text-primary mb-4">Areas of Expertise</span>
+          <h2 className="heading-md mb-5">
+            Specialized <span className="text-primary">Skills</span> & Services
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl">
             My multidisciplinary skill set allows me to approach projects 
             holistically, from concept to execution.
           </p>

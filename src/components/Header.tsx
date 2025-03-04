@@ -39,15 +39,15 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 py-4 px-6 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 py-5 px-6 transition-all duration-300",
         isScrolled
-          ? "bg-white/80 backdrop-blur-md shadow-sm"
+          ? "bg-white/90 backdrop-blur-md shadow-sm"
           : "bg-transparent"
       )}
     >
       <div className="container flex items-center justify-between">
-        <a href="#" className="text-xl font-display font-medium">
-          <span className="text-primary">Portfolio</span>
+        <a href="#" className="text-xl font-bold">
+          <span className="text-primary">PORTFOLIO</span>
         </a>
 
         {isMobile ? (
