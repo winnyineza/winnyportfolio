@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
-type AnimationType = "fade-in" | "fade-in-right" | "fade-in-left" | "scale-in" | "blur-in";
+type AnimationType = "fade-in" | "fade-in-right" | "fade-in-left" | "scale-in" | "blur-in" | "bounce-in" | "rotate-in";
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
@@ -50,12 +50,33 @@ const AnimatedSection = ({
     };
   }, [threshold]);
 
+  const getAnimationClass = () => {
+    switch (animation) {
+      case "fade-in":
+        return "animate-fade-in";
+      case "fade-in-right":
+        return "animate-fade-in-right";
+      case "fade-in-left":
+        return "animate-fade-in-left";
+      case "scale-in":
+        return "animate-scale-in";
+      case "blur-in":
+        return "animate-blur-in";
+      case "bounce-in":
+        return "animate-bounce-in";
+      case "rotate-in":
+        return "animate-rotate-in";
+      default:
+        return "animate-fade-in";
+    }
+  };
+
   return (
     <Component
       ref={sectionRef}
       className={cn(
         "opacity-0",
-        isVisible && `animate-${animation}`,
+        isVisible && getAnimationClass(),
         className
       )}
       style={{
