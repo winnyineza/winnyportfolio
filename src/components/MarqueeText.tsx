@@ -5,7 +5,7 @@ const MarqueeText = () => {
   const marqueeText = "UI/UX DESIGN • WEB DEVELOPMENT • APP DEVELOPMENT • BRAND IDENTITY • SOCIAL MEDIA • ";
   
   return (
-    <div className="w-full overflow-hidden border-t border-b border-gray-800 py-4 bg-gray-900">
+    <div className="w-full overflow-hidden border-t border-b border-gray-800 py-4 bg-black">
       <div className="marquee-container">
         <div className="marquee-content animate-marquee">
           {Array(4).fill(marqueeText).map((text, idx) => (

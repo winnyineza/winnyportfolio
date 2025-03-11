@@ -39,7 +39,7 @@ const ProjectCard = ({
       delay={0.1 * index}
       className={cn(
         "group relative overflow-hidden border rounded-xl",
-        isAlternate ? "bg-gray-900 border-gray-800" : "bg-white border-gray-200"
+        isAlternate ? "bg-black border-gray-800" : "bg-white border-gray-200"
       )}
     >
       <div className="absolute top-4 right-4 z-10 bg-black/80 rounded-full px-3 py-1 text-xs font-bold text-white">
@@ -80,7 +80,7 @@ const ProjectCard = ({
       
       <div className={cn(
         "p-6",
-        isAlternate ? "bg-gray-900 text-white" : "bg-white text-gray-900"
+        isAlternate ? "bg-black text-white" : "bg-white text-black"
       )}>
         <div className="flex flex-wrap gap-2 mb-3">
           {tags.map((tag, i) => (
@@ -90,7 +90,7 @@ const ProjectCard = ({
                 "px-2 py-1 text-xs font-medium rounded-full border",
                 isAlternate 
                   ? "bg-gray-800 text-white border-gray-700" 
-                  : "bg-gray-100 text-gray-900 border-gray-200"
+                  : "bg-gray-200 text-black border-gray-300"
               )}
             >
               {tag}
@@ -102,7 +102,7 @@ const ProjectCard = ({
         </h3>
         <p className={cn(
           "mb-4",
-          isAlternate ? "text-gray-400" : "text-gray-600"
+          isAlternate ? "text-gray-300" : "text-gray-700"
         )}>
           {description}
         </p>
@@ -115,8 +115,8 @@ const ProjectCard = ({
             className={cn(
               "inline-flex items-center gap-1 font-medium border-b-2 px-2 py-1 transition-colors",
               isAlternate 
-                ? "border-gray-700 hover:bg-gray-800" 
-                : "border-gray-200 hover:bg-gray-100"
+                ? "border-gray-700 text-white hover:bg-gray-800" 
+                : "border-gray-300 text-black hover:bg-gray-100"
             )}
           >
             View Project <ArrowUpRight className="h-4 w-4" />
