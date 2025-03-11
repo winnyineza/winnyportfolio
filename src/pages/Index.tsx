@@ -15,7 +15,7 @@ const Index = () => {
     document.documentElement.style.scrollBehavior = "smooth";
     
     // Set the background color to match the design
-    document.body.style.backgroundColor = "#FFFFFF";
+    document.body.style.backgroundColor = "#111111";
 
     return () => {
       document.documentElement.style.scrollBehavior = "";
@@ -24,7 +24,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-gray-900 text-white">
       <Header />
       <main>
         <Hero />
