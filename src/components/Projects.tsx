@@ -58,11 +58,11 @@ const Projects = () => {
       
       <div className="container py-20">
         <AnimatedSection className="mb-16">
-          <span className="inline-block bg-yellow-400 text-black px-4 py-1 mb-4 border border-black">Selected Work</span>
-          <h2 className="heading-md mb-5 text-black">
-            Transforming Ideas into <span className="bg-yellow-400 px-2">Impact</span>
+          <span className="inline-block bg-gray-900 text-white px-4 py-1 mb-4 border border-gray-800">Selected Work</span>
+          <h2 className="heading-md mb-5 text-gray-900">
+            Transforming Ideas into <span className="bg-gray-100 px-2">Impact</span>
           </h2>
-          <p className="text-black/70 max-w-2xl">
+          <p className="text-gray-600 max-w-2xl">
             A curated collection of my projects spanning UI/UX design, 
             web & app development, identity design, and social media management.
           </p>
@@ -84,11 +84,11 @@ const Projects = () => {
         </div>
       </div>
       
-      <div className="w-full py-8 bg-yellow-400 border-t border-b border-black">
+      <div className="w-full py-8 bg-gray-900 border-t border-b border-gray-800">
         <div className="container text-center">
           <a 
             href="#contact" 
-            className="inline-block bg-black text-white px-8 py-3 rounded-full text-lg font-bold hover:bg-white hover:text-black transition-colors duration-300 border-2 border-black"
+            className="inline-block bg-white text-gray-900 px-8 py-3 rounded-full text-lg font-bold hover:bg-gray-100 transition-colors duration-300 border-2 border-gray-800"
           >
             View Full Portfolio
           </a>

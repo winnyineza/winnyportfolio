@@ -38,11 +38,11 @@ const ProjectCard = ({
       animation="fade-in" 
       delay={0.1 * index}
       className={cn(
-        "group relative overflow-hidden border-2 border-black rounded-xl",
-        isAlternate ? "bg-yellow-400" : "bg-white"
+        "group relative overflow-hidden border rounded-xl",
+        isAlternate ? "bg-gray-900 border-gray-800" : "bg-white border-gray-200"
       )}
     >
-      <div className="absolute top-4 right-4 z-10 bg-yellow-400 rounded-full px-3 py-1 text-xs font-bold border border-black">
+      <div className="absolute top-4 right-4 z-10 bg-black/80 rounded-full px-3 py-1 text-xs font-bold text-white">
         {currentImageIndex + 1}/{images.length}
       </div>
       
@@ -50,17 +50,17 @@ const ProjectCard = ({
         <div className="absolute inset-0 flex items-center justify-between px-4 z-20">
           <button 
             onClick={prevImage}
-            className="bg-white p-2 rounded-full border border-black transform transition-transform hover:scale-110 focus:outline-none"
+            className="bg-white/10 backdrop-blur-sm p-2 rounded-full border border-white/20 transform transition-transform hover:scale-110 focus:outline-none"
             aria-label="Previous image"
           >
-            <ArrowLeft className="h-5 w-5 text-black" />
+            <ArrowLeft className="h-5 w-5 text-white" />
           </button>
           <button 
             onClick={nextImage}
-            className="bg-white p-2 rounded-full border border-black transform transition-transform hover:scale-110 focus:outline-none"
+            className="bg-white/10 backdrop-blur-sm p-2 rounded-full border border-white/20 transform transition-transform hover:scale-110 focus:outline-none"
             aria-label="Next image"
           >
-            <ArrowRight className="h-5 w-5 text-black" />
+            <ArrowRight className="h-5 w-5 text-white" />
           </button>
         </div>
         
@@ -80,15 +80,17 @@ const ProjectCard = ({
       
       <div className={cn(
         "p-6",
-        isAlternate ? "bg-yellow-400 text-black" : "bg-white text-black"
+        isAlternate ? "bg-gray-900 text-white" : "bg-white text-gray-900"
       )}>
         <div className="flex flex-wrap gap-2 mb-3">
           {tags.map((tag, i) => (
             <span
               key={i}
               className={cn(
-                "px-2 py-1 text-xs font-medium rounded-full border border-black",
-                isAlternate ? "bg-white text-black" : "bg-yellow-400 text-black"
+                "px-2 py-1 text-xs font-medium rounded-full border",
+                isAlternate 
+                  ? "bg-gray-800 text-white border-gray-700" 
+                  : "bg-gray-100 text-gray-900 border-gray-200"
               )}
             >
               {tag}
@@ -100,7 +102,7 @@ const ProjectCard = ({
         </h3>
         <p className={cn(
           "mb-4",
-          isAlternate ? "text-black/80" : "text-black/70"
+          isAlternate ? "text-gray-400" : "text-gray-600"
         )}>
           {description}
         </p>
@@ -110,7 +112,12 @@ const ProjectCard = ({
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 font-medium border-b-2 border-black hover:bg-black hover:text-white px-2 py-1 transition-colors"
+            className={cn(
+              "inline-flex items-center gap-1 font-medium border-b-2 px-2 py-1 transition-colors",
+              isAlternate 
+                ? "border-gray-700 hover:bg-gray-800" 
+                : "border-gray-200 hover:bg-gray-100"
+            )}
           >
             View Project <ArrowUpRight className="h-4 w-4" />
           </a>

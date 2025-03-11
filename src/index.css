@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -9,32 +8,23 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 13%;
-
     --card: 0 0% 100%;
     --card-foreground: 240 10% 13%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 13%;
-
-    --primary: 350 65% 55%;
+    --primary: 240 10% 13%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 220 14% 96%;
+    --secondary: 240 10% 95%;
     --secondary-foreground: 240 10% 13%;
-
-    --muted: 220 14% 96%;
+    --muted: 240 10% 95%;
     --muted-foreground: 240 10% 40%;
-
-    --accent: 340 75% 95%;
-    --accent-foreground: 350 65% 55%;
-
+    --accent: 240 10% 95%;
+    --accent-foreground: 240 10% 13%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-
-    --border: 220 13% 90%;
-    --input: 220 13% 90%;
-    --ring: 350 65% 55%;
-
+    --border: 240 10% 90%;
+    --input: 240 10% 90%;
+    --ring: 240 10% 13%;
     --radius: 0.5rem;
   }
 
@@ -50,7 +40,7 @@
   }
 
   ::selection {
-    @apply bg-primary/20 text-primary;
+    @apply bg-gray-900/20 text-gray-900;
   }
 }
 
