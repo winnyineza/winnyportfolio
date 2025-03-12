@@ -6,7 +6,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import { Download, Facebook, Twitter, Instagram, Linkedin, Github } from "lucide-react";
 
 // Use the profile image uploaded
-const profileImage = "/lovable-uploads/39882d61-5404-43a2-b518-2a1cdc246b7d.png";
+const profileImage = "/lovable-uploads/c50f855e-d8b5-45cd-8fa8-9105aeb8ee8a.png";
 
 const About = () => {
   return (
@@ -25,14 +25,14 @@ const About = () => {
                 
                 <div className="card-border bg-[#111] p-6 text-center mb-6">
                   <div className="rounded-xl overflow-hidden max-w-[160px] mx-auto mb-6">
-                    <img src={profileImage} alt="Oyedokun Kehinde" className="w-full" />
+                    <img src={profileImage} alt="Winny Didine Ineza" className="w-full" />
                   </div>
                   
-                  <h2 className="text-xl font-bold mb-4">Oyedokun Kehinde</h2>
+                  <h2 className="text-xl font-bold mb-4">Winny Didine Ineza</h2>
                   
                   <div className="flex justify-center space-x-3 mb-6">
-                    <a href="#" className="social-icon">
-                      <Facebook className="h-4 w-4" />
+                    <a href="https://www.linkedin.com/in/winny-didine-ineza" target="_blank" className="social-icon">
+                      <Linkedin className="h-4 w-4" />
                     </a>
                     <a href="#" className="social-icon">
                       <Twitter className="h-4 w-4" />
@@ -59,15 +59,11 @@ const About = () => {
             <div className="md:col-span-8">
               <AnimatedSection animation="fade-in" delay={0.3}>
                 <p className="text-gray-300 mb-6">
-                  I am a dedicated Frontend Developer & experienced Graphics Designer based in Akure, Nigeria. I have a strong eye for detail and a commitment to creating pixel-perfect websites, graphic designs, and brand identities that help businesses stand out in their markets. I am passionate about turning ideas into beautiful digital experiences.
-                </p>
-                
-                <p className="text-gray-300 mb-6">
-                  With expertise in both development and design, I bring a unique perspective to every project. My versatile skill set allows me to seamlessly handle both the technical implementation and creative aspects of digital products, ensuring cohesive and impactful end results.
+                  Passionate about leveraging the power of digital marketing to drive business growth and enhance customer engagement, I possess a strong foundation in software engineering and digital marketing strategies. With hands-on experience in creating and implementing successful marketing campaigns, I strive to stay ahead of emerging trends in the digital landscape.
                 </p>
                 
                 <p className="text-gray-300 mb-10">
-                  I am detail-oriented, organized, and disciplined in my approach to work. I believe in the power of effective communication and collaboration, which enables me to translate client visions into tangible products that exceed expectations and deliver real business value.
+                  Currently pursuing a Bachelor of Software Engineering at African Leadership University, I am motivated by challenges, continually aiming to refine my skills and contribute meaningfully to any organization's marketing success.
                 </p>
                 
                 <h2 className="text-2xl font-bold mb-6">EXPERIENCE</h2>
@@ -75,34 +71,34 @@ const About = () => {
                 <div className="space-y-10">
                   <div>
                     <div className="flex justify-between items-center mb-2">
-                      <h3 className="text-xl font-semibold">Senior Developer</h3>
-                      <span className="text-blue-500">2022 - Present</span>
+                      <h3 className="text-xl font-semibold">Operations Assistant</h3>
+                      <span className="text-blue-500">2023 - Present</span>
                     </div>
-                    <div className="text-sm text-gray-400 mb-3">Decima Digital</div>
+                    <div className="text-sm text-gray-400 mb-3">Job In Rwanda</div>
                     <p className="text-gray-300 text-sm">
-                      As the Senior Developer for Decimal Digital, I oversee Frontend Development, collaborate with project managers and designers to transform concepts into responsive websites, creating innovative solutions for clients.
+                      Spearhead the timely posting and optimization of ads on the JiR website, collaborate with clients for error-free advertisements, prepare Proforma invoices, and provide excellent customer support.
                     </p>
                   </div>
                   
                   <div>
                     <div className="flex justify-between items-center mb-2">
-                      <h3 className="text-xl font-semibold">Frontend Developer</h3>
-                      <span className="text-blue-500">2019 - 2022</span>
+                      <h3 className="text-xl font-semibold">Jr. Sales Officer</h3>
+                      <span className="text-blue-500">2021 - 2023</span>
                     </div>
-                    <div className="text-sm text-gray-400 mb-3">WebLine Studios</div>
+                    <div className="text-sm text-gray-400 mb-3">Water Access Rwanda</div>
                     <p className="text-gray-300 text-sm">
-                      At WebLine Studios, I developed responsive layouts and user interfaces for client websites using HTML, CSS, JavaScript, and React. I collaborated with the UI/UX design team to implement pixel-perfect designs for various business verticals.
+                      Managed company sales, developed marketing strategies, prepared promotional materials, and handled customer relations while maintaining detailed records of sales, warranties, and project documentation.
                     </p>
                   </div>
                   
                   <div>
                     <div className="flex justify-between items-center mb-2">
-                      <h3 className="text-xl font-semibold">UI Designer</h3>
-                      <span className="text-blue-500">2018 - 2019</span>
+                      <h3 className="text-xl font-semibold">IT Assistant</h3>
+                      <span className="text-blue-500">2020</span>
                     </div>
-                    <div className="text-sm text-gray-400 mb-3">Digital Artisans</div>
+                    <div className="text-sm text-gray-400 mb-3">Réseau Des Femmes</div>
                     <p className="text-gray-300 text-sm">
-                      At Digital Artisans in Ibadan, I worked as a Junior UI Designer creating wireframes and prototypes for web applications, collaborating with the development team to ensure consistent design implementation.
+                      Responsible for configuring hardware and software, setting up peripherals, and handling installation, operation, and maintenance of computer systems.
                     </p>
                   </div>
                 </div>
@@ -113,26 +109,26 @@ const About = () => {
                   <div className="space-y-6">
                     <div>
                       <div className="flex justify-between items-center mb-2">
-                        <h3 className="text-xl font-semibold">BSc, Computer Science</h3>
-                        <span className="text-blue-500">2015 - 2019</span>
+                        <h3 className="text-xl font-semibold">BSc, Software Engineering</h3>
+                        <span className="text-blue-500">2022 - Present</span>
                       </div>
-                      <div className="text-sm text-gray-400">Federal University of Technology, Akure</div>
+                      <div className="text-sm text-gray-400">African Leadership University</div>
                     </div>
                     
                     <div>
                       <div className="flex justify-between items-center mb-2">
-                        <h3 className="text-xl font-semibold">Web Development Certification</h3>
-                        <span className="text-blue-500">2017</span>
+                        <h3 className="text-xl font-semibold">IBM Data Science Professional Certificate</h3>
+                        <span className="text-blue-500">2024</span>
                       </div>
-                      <div className="text-sm text-gray-400">Udemy</div>
+                      <div className="text-sm text-gray-400">IBM</div>
                     </div>
                     
                     <div>
                       <div className="flex justify-between items-center mb-2">
-                        <h3 className="text-xl font-semibold">Design & Animation</h3>
-                        <span className="text-blue-500">2016</span>
+                        <h3 className="text-xl font-semibold">Network Automation Engineering</h3>
+                        <span className="text-blue-500">2024</span>
                       </div>
-                      <div className="text-sm text-gray-400">Coursera</div>
+                      <div className="text-sm text-gray-400">Cisco</div>
                     </div>
                   </div>
                 </div>
@@ -141,24 +137,21 @@ const About = () => {
                   <div>
                     <h2 className="text-xl font-bold mb-4">SKILLS</h2>
                     <div className="space-y-2">
-                      <div className="text-gray-300">HTML5</div>
-                      <div className="text-gray-300">CSS3</div>
-                      <div className="text-gray-300">JavaScript</div>
-                      <div className="text-gray-300">React</div>
-                      <div className="text-gray-300">TailwindCSS</div>
-                      <div className="text-gray-300">Figma</div>
+                      <div className="text-gray-300">Digital Marketing</div>
+                      <div className="text-gray-300">Software Engineering</div>
+                      <div className="text-gray-300">Project Management</div>
+                      <div className="text-gray-300">Customer Relations</div>
+                      <div className="text-gray-300">Technical Support</div>
+                      <div className="text-gray-300">Sales Management</div>
                     </div>
                   </div>
                   
                   <div>
-                    <h2 className="text-xl font-bold mb-4">TOOLS</h2>
+                    <h2 className="text-xl font-bold mb-4">LANGUAGES</h2>
                     <div className="space-y-2">
-                      <div className="text-gray-300">VS Code</div>
-                      <div className="text-gray-300">Git</div>
-                      <div className="text-gray-300">Adobe XD</div>
-                      <div className="text-gray-300">Photoshop</div>
-                      <div className="text-gray-300">Illustrator</div>
-                      <div className="text-gray-300">Blender</div>
+                      <div className="text-gray-300">Kinyarwanda (Native)</div>
+                      <div className="text-gray-300">English (Fluent)</div>
+                      <div className="text-gray-300">French (Good)</div>
                     </div>
                   </div>
                 </div>
