@@ -28,8 +28,8 @@ const ContactForm = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+        title: "Message delivered!",
+        description: "Your message has been successfully sent. I'll be in touch shortly.",
       });
       setFormData({ name: "", email: "", subject: "", message: "" });
     }, 1500);
@@ -39,7 +39,7 @@ const ContactForm = () => {
     <AnimatedSection animation="fade-in" delay={0.5} className="card-border bg-[#111] p-6 md:p-8 card-hover">
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-2xl md:text-3xl font-bold">
-          Let's work <span className="text-gradient-blue">together.</span>
+          Start a <span className="text-gradient-blue">conversation.</span>
         </h2>
         <div className="hidden md:block">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +56,7 @@ const ContactForm = () => {
             type="text"
             name="name"
             id="name"
-            placeholder="Name *"
+            placeholder="Your Name *"
             required
             value={formData.name}
             onChange={handleChange}
@@ -69,7 +69,7 @@ const ContactForm = () => {
             type="email"
             name="email"
             id="email"
-            placeholder="Email *"
+            placeholder="Email Address *"
             required
             value={formData.email}
             onChange={handleChange}
@@ -82,7 +82,7 @@ const ContactForm = () => {
             type="text"
             name="subject"
             id="subject"
-            placeholder="Your Subject *"
+            placeholder="Project Topic *"
             required
             value={formData.subject}
             onChange={handleChange}
@@ -95,7 +95,7 @@ const ContactForm = () => {
             name="message"
             id="message"
             rows={6}
-            placeholder="Your Message *"
+            placeholder="Share Your Thoughts *"
             required
             value={formData.message}
             onChange={handleChange}
@@ -109,7 +109,7 @@ const ContactForm = () => {
             disabled={isSubmitting}
             className="w-full bg-[#1A1A1A] hover:bg-[#333] border border-[#333] rounded-md py-3 text-white font-medium transition-colors duration-300"
           >
-            {isSubmitting ? "Sending..." : "Send Message"}
+            {isSubmitting ? "Connecting..." : "Initiate Contact"}
           </button>
         </div>
       </form>
