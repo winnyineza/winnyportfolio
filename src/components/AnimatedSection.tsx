@@ -18,7 +18,7 @@ const AnimatedSection = ({
   className,
   animation = "fade-in",
   delay = 0,
-  threshold = 0.3,
+  threshold = 0.1,
   as: Component = "div",
 }: AnimatedSectionProps) => {
   const [isVisible, setIsVisible] = useState(false);

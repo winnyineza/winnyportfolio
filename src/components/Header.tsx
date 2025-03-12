@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -10,9 +10,10 @@ const Header = () => {
   const isMobile = useIsMobile();
 
   const navLinks = [
-    { name: "Work", href: "#work" },
-    { name: "Skills", href: "#skills" },
+    { name: "Home", href: "#" },
     { name: "About", href: "#about" },
+    { name: "Services", href: "#services" },
+    { name: "Works", href: "#works" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -41,20 +42,20 @@ const Header = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 py-5 px-6 transition-all duration-300",
         isScrolled
-          ? "bg-white shadow-sm text-black"
-          : "bg-transparent text-white"
+          ? "bg-black/90 backdrop-blur-md border-b border-gray-800"
+          : "bg-transparent"
       )}
     >
       <div className="container flex items-center justify-between">
-        <a href="#" className="text-xl font-bold">
-          <span className={isScrolled ? "text-black" : "text-white"}>PORTFOLIO</span>
+        <a href="#" className="text-xl font-bold text-white">
+          Oyedokun
         </a>
 
         {isMobile ? (
           <>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={isScrolled ? "p-2 text-black" : "p-2 text-white"}
+              className="p-2 text-white"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -76,27 +77,38 @@ const Header = () => {
                       {link.name}
                     </button>
                   ))}
+                  <a 
+                    href="#"
+                    className="mt-6 flex items-center gap-2 bg-zinc-800 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-zinc-700 transition-all duration-300"
+                  >
+                    <Download className="h-4 w-4" />
+                    Download CV
+                  </a>
                 </nav>
               </div>
             )}
           </>
         ) : (
-          <nav className="flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <button
-                key={link.name}
-                onClick={() => handleNavClick(link.href)}
-                className={cn(
-                  "text-sm font-medium transition-colors",
-                  isScrolled 
-                    ? "text-black hover:text-gray-700" 
-                    : "text-white hover:text-gray-300"
-                )}
-              >
-                {link.name}
-              </button>
-            ))}
-          </nav>
+          <div className="flex items-center space-x-8">
+            <nav className="flex items-center space-x-8">
+              {navLinks.map((link) => (
+                <button
+                  key={link.name}
+                  onClick={() => handleNavClick(link.href)}
+                  className="text-sm font-medium text-white/70 hover:text-white transition-colors"
+                >
+                  {link.name}
+                </button>
+              ))}
+            </nav>
+            <a 
+              href="#"
+              className="flex items-center gap-2 bg-zinc-800 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-zinc-700 transition-all duration-300"
+            >
+              <Download className="h-4 w-4" />
+              Download CV
+            </a>
+          </div>
         )}
       </div>
     </header>
