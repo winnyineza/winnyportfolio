@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Github, Linkedin, BehanceLogo } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Github, Linkedin } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -100,10 +100,10 @@ const Contact = () => {
                     <Phone className="h-5 w-5" />
                   </a>
                   <a href="#" className="social-icon">
-                    <BehanceLogo className="h-5 w-5" />
+                    <Github className="h-5 w-5" />
                   </a>
                   <a href="#" className="social-icon">
-                    <Github className="h-5 w-5" />
+                    <Linkedin className="h-5 w-5" />
                   </a>
                 </div>
               </AnimatedSection>

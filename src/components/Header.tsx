@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Menu, X, Download } from "lucide-react";
@@ -8,13 +9,14 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const isMobile = useIsMobile();
+  const location = useLocation();
 
   const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Works", href: "#works" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/", path: "/" },
+    { name: "About", href: "/about", path: "/about" },
+    { name: "Services", href: "/services", path: "/services" },
+    { name: "Works", href: "/works", path: "/works" },
+    { name: "Contact", href: "/contact", path: "/contact" },
   ];
 
   useEffect(() => {
@@ -26,15 +28,8 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      window.scrollTo({
-        top: element.getBoundingClientRect().top + window.scrollY - 100,
-        behavior: "smooth",
-      });
-      setIsMobileMenuOpen(false);
-    }
+  const isActive = (path: string) => {
+    return location.pathname === path;
   };
 
   return (
@@ -46,10 +41,10 @@ const Header = () => {
           : "bg-transparent"
       )}
     >
-      <div className="container flex items-center justify-between">
-        <a href="#" className="text-xl font-bold text-white">
+      <div className="container mx-auto flex items-center justify-between">
+        <Link to="/" className="text-xl font-bold text-white">
           Oyedokun
-        </a>
+        </Link>
 
         {isMobile ? (
           <>
@@ -69,13 +64,17 @@ const Header = () => {
               <div className="fixed inset-0 top-[72px] bg-black/95 z-40 animate-fade-in">
                 <nav className="flex flex-col items-center justify-center h-full">
                   {navLinks.map((link) => (
-                    <button
+                    <Link
                       key={link.name}
-                      onClick={() => handleNavClick(link.href)}
-                      className="py-6 text-xl font-medium text-white hover:text-gray-300 transition-colors"
+                      to={link.href}
+                      className={cn(
+                        "py-6 text-xl font-medium transition-colors",
+                        isActive(link.path) ? "text-white" : "text-gray-400 hover:text-gray-300"
+                      )}
+                      onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {link.name}
-                    </button>
+                    </Link>
                   ))}
                   <a 
                     href="#"
@@ -92,13 +91,16 @@ const Header = () => {
           <div className="flex items-center space-x-8">
             <nav className="flex items-center space-x-8">
               {navLinks.map((link) => (
-                <button
+                <Link
                   key={link.name}
-                  onClick={() => handleNavClick(link.href)}
-                  className="text-sm font-medium text-white/70 hover:text-white transition-colors"
+                  to={link.href}
+                  className={cn(
+                    "text-sm font-medium transition-colors",
+                    isActive(link.path) ? "text-white" : "text-white/70 hover:text-white"
+                  )}
                 >
                   {link.name}
-                </button>
+                </Link>
               ))}
             </nav>
             <a 

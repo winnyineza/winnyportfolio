@@ -1,245 +1,378 @@
 
-import React, { useEffect } from "react";
-import { ArrowRight, Download, Facebook, Twitter, Instagram, Github, Linkedin, Phone, Mail, MapPin, Heart } from "lucide-react";
-import AnimatedSection from "@/components/AnimatedSection";
+import React, { useEffect, useState } from "react";
+import { ArrowRight, Mail, MoveRight, ExternalLink, MousePointer } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-// Import profile image
-const profileImage = "/lovable-uploads/39882d61-5404-43a2-b518-2a1cdc246b7d.png";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const Index = () => {
-  useEffect(() => {
-    document.documentElement.style.scrollBehavior = "smooth";
-    document.body.style.backgroundColor = "#000000";
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHoveringHero, setIsHoveringHero] = useState(false);
 
-    return () => {
-      document.documentElement.style.scrollBehavior = "";
-      document.body.style.backgroundColor = "";
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY,
+      });
     };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  const featuredProjects = [
+    {
+      id: 1,
+      title: "Red Rose Landscaping",
+      image: "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=500&auto=format",
+      tags: ["Web Design", "Branding"]
+    },
+    {
+      id: 2,
+      title: "Odigun Repairs",
+      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&auto=format",
+      tags: ["App Development", "UI/UX"]
+    },
+    {
+      id: 3,
+      title: "Next LVL Landscaping",
+      image: "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=500&auto=format",
+      tags: ["Web Development", "Branding"]
+    }
+  ];
+
+  const services = [
+    { 
+      id: 1, 
+      title: "Website Design", 
+      description: "I create professional websites with clean designs and intuitive user experiences that effectively represent your brand." 
+    },
+    { 
+      id: 2, 
+      title: "Graphics Design", 
+      description: "From logos to marketing materials, I deliver high-quality graphics that communicate your message visually." 
+    },
+    { 
+      id: 3, 
+      title: "UI/UX Design", 
+      description: "I craft user interfaces that are not only beautiful but functional, enhancing user engagement and satisfaction." 
+    },
+    { 
+      id: 4, 
+      title: "Branding", 
+      description: "I develop comprehensive brand identities that help businesses stand out in their market and connect with their audience." 
+    },
+  ];
+
   return (
-    <div className="flex flex-col min-h-screen bg-black text-white">
+    <div className="relative overflow-x-hidden bg-black text-white">
+      <div 
+        className="cursor-dot fixed z-50 pointer-events-none" 
+        style={{ 
+          transform: `translate(${mousePosition.x - 8}px, ${mousePosition.y - 8}px)`,
+          width: isHoveringHero ? '80px' : '16px',
+          height: isHoveringHero ? '80px' : '16px',
+          background: isHoveringHero ? 'rgba(255, 255, 255, 0.2)' : 'white',
+          borderRadius: '50%',
+          transition: 'width 0.3s, height 0.3s, background 0.3s',
+          opacity: 0.7
+        }}
+      />
+      
       <Header />
       
-      <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="container mx-auto py-12 lg:py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            {/* Welcome Message */}
-            <div className="lg:col-span-12 mb-6">
-              <AnimatedSection animation="fade-in" delay={0.1} className="p-4 rounded-xl bg-[#111] inline-block">
-                <p className="text-sm">Howdy, welcome to my portfolio! Take a look around, feel at home and let's do business! 👋</p>
-              </AnimatedSection>
+      {/* Hero Section */}
+      <section 
+        id="hero" 
+        className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
+        onMouseEnter={() => setIsHoveringHero(true)}
+        onMouseLeave={() => setIsHoveringHero(false)}
+      >
+        <div className="container mx-auto text-center relative z-10">
+          <AnimatedSection animation="fade-in" delay={0.1}>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              Creative Developer & <br />UI/UX Designer
+            </h1>
+            <p className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+              I specialize in creating elegant, user-friendly websites and applications that deliver exceptional user experiences.
+            </p>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+              <a 
+                href="#contact" 
+                className="bg-white text-black px-6 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors w-full md:w-auto"
+              >
+                <Mail className="h-5 w-5" />
+                Get in touch
+              </a>
+              <a 
+                href="#works" 
+                className="border border-white/30 backdrop-blur-sm px-6 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-white/10 transition-colors w-full md:w-auto"
+              >
+                Explore work
+                <MoveRight className="h-5 w-5" />
+              </a>
             </div>
-
-            {/* Profile Card */}
-            <div className="lg:col-span-5">
-              <AnimatedSection animation="fade-in" delay={0.2} className="card-border bg-[#111] p-6 card-hover">
-                <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
-                  <div className="w-32 h-32 rounded-xl overflow-hidden">
-                    <img src={profileImage} alt="Profile" className="w-full h-full object-cover" />
-                  </div>
+          </AnimatedSection>
+          
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-900/50 via-black to-black -z-10"></div>
+        </div>
+        
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center">
+          <span className="text-sm text-gray-400 mb-2">Scroll down</span>
+          <div className="h-12 w-6 border border-gray-700 rounded-full flex items-start justify-center p-1">
+            <div className="h-2 w-2 bg-white rounded-full animate-bounce"></div>
+          </div>
+        </div>
+      </section>
+      
+      {/* About Section */}
+      <section id="about" className="py-20 px-4">
+        <div className="container mx-auto">
+          <AnimatedSection animation="fade-in" delay={0.1}>
+            <div className="flex flex-col md:flex-row gap-12">
+              <div className="md:w-1/2">
+                <div className="mb-6">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                    <span className="inline-flex items-center">
+                      <span className="text-xs mr-2">✦</span>
+                      About me
+                      <span className="text-xs ml-2">✦</span>
+                    </span>
+                  </h2>
+                </div>
+                
+                <p className="text-gray-400 mb-6">
+                  I am a Frontend Developer and UI/UX Designer with a passion for creating digital experiences that are both visually appealing and functional. With a strong emphasis on user-centered design principles, I strive to bridge the gap between user needs and business goals.
+                </p>
+                
+                <p className="text-gray-400 mb-6">
+                  My approach combines creative design thinking with technical expertise, allowing me to translate complex requirements into clean, maintainable code and intuitive interfaces. I believe that attention to detail and a deep understanding of the user journey are essential for creating meaningful digital products.
+                </p>
+                
+                <p className="text-gray-400 mb-8">
+                  When I'm not designing or coding, you'll find me exploring new technologies, contributing to open-source projects, or sketching UI concepts for fun. I'm always eager to take on new challenges and expand my skills.
+                </p>
+                
+                <a 
+                  href="/about" 
+                  className="border border-white/30 backdrop-blur-sm px-6 py-3 rounded-full font-medium inline-flex items-center gap-2 hover:bg-white/10 transition-colors"
+                >
+                  More about me
+                  <ArrowRight className="h-5 w-5" />
+                </a>
+              </div>
+              
+              <div className="md:w-1/2 card-border bg-[#111] p-8 rounded-xl">
+                <h3 className="text-xl font-bold mb-6">Experience & Education</h3>
+                
+                <div className="space-y-8">
                   <div>
-                    <div className="text-sm text-gray-400 mb-1">Frontend Engineer</div>
-                    <h1 className="text-2xl font-bold mb-2">Oyedokun Kehinde</h1>
-                    <p className="text-sm text-gray-300 mb-4">
-                      I am a Frontend Engineer and Graphics Designer in Akure, Nigeria.
-                    </p>
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-lg font-semibold">Senior Developer</h4>
+                      <span className="text-gray-400">2022 - Present</span>
+                    </div>
+                    <div className="text-sm text-gray-400">Decima Digital</div>
+                  </div>
+                  
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-lg font-semibold">Frontend Developer</h4>
+                      <span className="text-gray-400">2019 - 2022</span>
+                    </div>
+                    <div className="text-sm text-gray-400">WebLine Studios</div>
+                  </div>
+                  
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-lg font-semibold">UI Designer</h4>
+                      <span className="text-gray-400">2018 - 2019</span>
+                    </div>
+                    <div className="text-sm text-gray-400">Digital Artisans</div>
+                  </div>
+                  
+                  <div className="pt-4 border-t border-gray-800">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-lg font-semibold">BSc, Computer Science</h4>
+                      <span className="text-gray-400">2015 - 2019</span>
+                    </div>
+                    <div className="text-sm text-gray-400">Federal University of Technology, Akure</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+      
+      {/* Services Section */}
+      <section id="services" className="py-20 px-4 bg-[#0A0A0A]">
+        <div className="container mx-auto">
+          <AnimatedSection animation="fade-in" delay={0.1}>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                <span className="inline-flex items-center">
+                  <span className="text-xs mr-2">✦</span>
+                  Services
+                  <span className="text-xs ml-2">✦</span>
+                </span>
+              </h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                I offer a range of services to help businesses and individuals establish a strong online presence.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {services.map((service) => (
+                <AnimatedSection
+                  key={service.id}
+                  animation="fade-in" 
+                  delay={0.1 * service.id}
+                  className="service-card card-hover"
+                >
+                  <div className="icon-container mb-4">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-pen-tool"
+                    >
+                      <path d="m12 19 7-7 3 3-7 7-3-3z" />
+                      <path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                      <path d="m2 2 7.586 7.586" />
+                      <circle cx="11" cy="11" r="2" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-bold mb-3">{service.title}</h3>
+                  <p className="text-gray-400 text-sm">{service.description}</p>
+                </AnimatedSection>
+              ))}
+            </div>
+            
+            <div className="text-center mt-12">
+              <a 
+                href="/services" 
+                className="border border-white/30 backdrop-blur-sm px-6 py-3 rounded-full font-medium inline-flex items-center gap-2 hover:bg-white/10 transition-colors"
+              >
+                View all services
+                <ArrowRight className="h-5 w-5" />
+              </a>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+      
+      {/* Projects Section */}
+      <section id="works" className="py-20 px-4">
+        <div className="container mx-auto">
+          <AnimatedSection animation="fade-in" delay={0.1}>
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                  <span className="inline-flex items-center">
+                    <span className="text-xs mr-2">✦</span>
+                    Selected Works
+                    <span className="text-xs ml-2">✦</span>
+                  </span>
+                </h2>
+                <p className="text-gray-400 max-w-xl">
+                  A collection of my recent projects and collaborations.
+                </p>
+              </div>
+              <a 
+                href="/works" 
+                className="mt-4 md:mt-0 border border-white/30 backdrop-blur-sm px-6 py-3 rounded-full font-medium inline-flex items-center gap-2 hover:bg-white/10 transition-colors"
+              >
+                View all projects
+                <ArrowRight className="h-5 w-5" />
+              </a>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {featuredProjects.map((project, index) => (
+                <AnimatedSection 
+                  key={project.id}
+                  animation="fade-in" 
+                  delay={0.1 * (index + 1)} 
+                  className="card-border card-hover overflow-hidden relative group"
+                >
+                  <div className="relative aspect-video">
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="text-white text-center px-4">
+                        <div className="flex flex-wrap gap-2 justify-center mb-2">
+                          {project.tags.map((tag, i) => (
+                            <span key={i} className="text-xs px-2 py-1 bg-white/10 backdrop-blur-sm rounded-full">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                        <h3 className="text-lg font-bold">{project.title}</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-bold">{project.title}</h3>
                     <div className="circular-btn">
                       <ArrowRight className="h-4 w-4" />
                     </div>
                   </div>
-                </div>
-              </AnimatedSection>
+                </AnimatedSection>
+              ))}
             </div>
-
-            {/* Skills & Projects Cards */}
-            <div className="lg:col-span-7">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <AnimatedSection animation="fade-in" delay={0.3} className="card-border bg-[#111] p-6 relative card-hover">
-                  <div className="mb-4">
-                    <div className="text-xs text-gray-400">MORE ABOUT ME</div>
-                    <h3 className="text-lg font-semibold">Credentials</h3>
-                  </div>
-                  <div className="text-4xl font-bold italic mb-2 opacity-75">
-                    Oyedokun
-                  </div>
-                  <div className="circular-btn">
-                    <ArrowRight className="h-4 w-4" />
-                  </div>
-                </AnimatedSection>
-
-                <AnimatedSection animation="fade-in" delay={0.4} className="card-border bg-[#111] p-6 relative card-hover">
-                  <div className="mb-4">
-                    <div className="text-xs text-gray-400">SHOWCASE</div>
-                    <h3 className="text-lg font-semibold">Projects</h3>
-                  </div>
-                  <div className="h-12 w-12 bg-white text-black rounded-md flex items-center justify-center mb-2">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="3" y="3" width="18" height="18" rx="2" />
-                      <path d="M9 7H7v2h2V7Z" />
-                      <path d="M9 13H7v2h2v-2Z" />
-                      <path d="M9 19H7v2h2v-2Z" />
-                      <path d="M15 7h-2v2h2V7Z" />
-                      <path d="M15 13h-2v2h2v-2Z" />
-                      <path d="M15 19h-2v2h2v-2Z" />
-                    </svg>
-                  </div>
-                  <div className="circular-btn">
-                    <ArrowRight className="h-4 w-4" />
-                  </div>
-                </AnimatedSection>
+          </AnimatedSection>
+        </div>
+      </section>
+      
+      {/* Contact CTA Section */}
+      <section id="contact-cta" className="py-20 px-4 bg-[#0A0A0A]">
+        <div className="container mx-auto">
+          <AnimatedSection animation="fade-in" delay={0.1}>
+            <div className="card-border bg-[#111] p-8 md:p-12 relative overflow-hidden card-hover">
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 max-w-2xl">
+                  Have a project in mind? Let's bring it to life.
+                </h2>
+                <p className="text-gray-400 mb-8 max-w-xl">
+                  I'm currently available for freelance work. If you have a project that needs some creative direction, I'd love to hear about it.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a 
+                    href="/contact" 
+                    className="bg-white text-black px-6 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors"
+                  >
+                    <Mail className="h-5 w-5" />
+                    Get in touch
+                  </a>
+                  <a 
+                    href="#works" 
+                    className="border border-white/30 backdrop-blur-sm px-6 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-white/10 transition-colors"
+                  >
+                    View my work
+                    <ExternalLink className="h-5 w-5" />
+                  </a>
+                </div>
+              </div>
+              
+              <div className="absolute right-0 bottom-0 pointer-events-none">
+                <svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="150" cy="150" r="100" stroke="white" strokeWidth="1" strokeOpacity="0.1" />
+                  <circle cx="150" cy="150" r="150" stroke="white" strokeWidth="1" strokeOpacity="0.05" />
+                </svg>
               </div>
             </div>
-
-            {/* Blog & Services */}
-            <div className="lg:col-span-4">
-              <AnimatedSection animation="fade-in" delay={0.5} className="card-border bg-[#111] p-6 relative h-full card-hover">
-                <div className="mb-4">
-                  <div className="text-xs text-gray-400">BLOG</div>
-                  <h3 className="text-lg font-semibold">Tech Writings</h3>
-                </div>
-                <div className="h-16 w-16 mb-4">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-                    <polyline points="14 2 14 8 20 8" />
-                    <path d="M10 13L8 17L12 17L14 13" />
-                  </svg>
-                </div>
-                <div className="circular-btn">
-                  <ArrowRight className="h-4 w-4" />
-                </div>
-              </AnimatedSection>
-            </div>
-
-            {/* Services */}
-            <div className="lg:col-span-8">
-              <AnimatedSection animation="fade-in" delay={0.6} className="card-border bg-[#111] p-6 relative card-hover">
-                <div className="mb-6">
-                  <div className="text-xs text-gray-400">SPECIALIZATION</div>
-                  <h3 className="text-lg font-semibold">Services I Offer</h3>
-                </div>
-                <div className="flex justify-center space-x-8 mb-4">
-                  <div className="flex flex-col items-center">
-                    <div className="h-10 w-10 rounded-full bg-[#1A1A1A] flex items-center justify-center mb-2">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <circle cx="12" cy="12" r="10" />
-                        <line x1="2" y1="12" x2="22" y2="12" />
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <div className="h-10 w-10 rounded-full bg-[#1A1A1A] flex items-center justify-center mb-2">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                        <path d="M2 17l10 5 10-5" />
-                        <path d="M2 12l10 5 10-5" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <div className="h-10 w-10 rounded-full bg-[#1A1A1A] flex items-center justify-center mb-2">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <circle cx="18" cy="18" r="3" />
-                        <circle cx="6" cy="6" r="3" />
-                        <path d="M6 21V9a9 9 0 0 0 9 9" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <div className="h-10 w-10 rounded-full bg-[#1A1A1A] flex items-center justify-center mb-2">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18" />
-                        <line x1="7" y1="2" x2="7" y2="22" />
-                        <line x1="17" y1="2" x2="17" y2="22" />
-                        <line x1="2" y1="12" x2="22" y2="12" />
-                        <line x1="2" y1="7" x2="7" y2="7" />
-                        <line x1="2" y1="17" x2="7" y2="17" />
-                        <line x1="17" y1="17" x2="22" y2="17" />
-                        <line x1="17" y1="7" x2="22" y2="7" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div className="circular-btn">
-                  <ArrowRight className="h-4 w-4" />
-                </div>
-              </AnimatedSection>
-            </div>
-
-            {/* Social Media */}
-            <div className="lg:col-span-4">
-              <AnimatedSection animation="fade-in" delay={0.7} className="card-border bg-[#111] p-6 relative h-full card-hover">
-                <div className="mb-4">
-                  <div className="text-xs text-gray-400">GET SOCIAL WITH ME</div>
-                  <h3 className="text-lg font-semibold">Profiles</h3>
-                </div>
-                <div className="flex space-x-4 mb-4">
-                  <a href="#" className="social-icon">
-                    <Facebook className="h-5 w-5" />
-                  </a>
-                  <a href="#" className="social-icon">
-                    <Twitter className="h-5 w-5" />
-                  </a>
-                </div>
-                <div className="circular-btn">
-                  <ArrowRight className="h-4 w-4" />
-                </div>
-              </AnimatedSection>
-            </div>
-
-            {/* Stats */}
-            <div className="lg:col-span-8">
-              <AnimatedSection animation="fade-in" delay={0.8} className="card-border bg-[#111] p-6 card-hover">
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold mb-1">03</div>
-                    <div className="text-xs text-gray-400 uppercase">
-                      YEARS<br />EXPERIENCE
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold mb-1">60+</div>
-                    <div className="text-xs text-gray-400 uppercase">
-                      CLIENTS<br />SATISFIED
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold mb-1">100+</div>
-                    <div className="text-xs text-gray-400 uppercase">
-                      PROJECTS<br />COMPLETED
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
-            </div>
-
-            {/* Let's Work Together */}
-            <div className="lg:col-span-4">
-              <AnimatedSection animation="fade-in" delay={0.9} className="card-border bg-[#111] p-6 relative h-full card-hover">
-                <div className="flex items-center mb-4">
-                  <div className="text-2xl font-bold">
-                    Let's <span className="text-gradient-blue">work</span> <br />together!
-                  </div>
-                  <div className="ml-auto">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z" />
-                      <path d="m12 8 4 4-4 4" />
-                      <path d="M8 12h8" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="circular-btn">
-                  <ArrowRight className="h-4 w-4" />
-                </div>
-              </AnimatedSection>
-            </div>
-          </div>
-        </section>
-      </main>
+          </AnimatedSection>
+        </div>
+      </section>
       
       <Footer />
     </div>
