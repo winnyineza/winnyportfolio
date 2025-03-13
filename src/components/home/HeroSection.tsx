@@ -21,7 +21,7 @@ const HeroSection = ({ setIsHoveringHero }: HeroSectionProps) => {
             Digital Solution Strategist
           </h1>
           <p className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            I create impactful digital solutions that drive business growth and enhance user engagement across web, mobile, and multimedia platforms by blending design, development, branding, and marketing.
+            I create impactful digital solutions that drive growth and enhance user engagement across web, mobile, and multimedia platforms.
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-4">
             <a 
