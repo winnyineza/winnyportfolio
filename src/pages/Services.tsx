@@ -1,6 +1,6 @@
 
 import React from "react";
-import { ArrowRight, Laptop, PenTool, BriefcaseBusiness, Video } from "lucide-react";
+import { ArrowRight, Laptop, PenTool, BriefcaseBusiness, Video, Smartphone, Activity } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -34,6 +34,13 @@ const Services = () => {
                 
                 <div className="card-border bg-[#111] p-6 card-hover flex items-center space-x-4">
                   <div className="h-10 w-10 rounded-full bg-[#1A1A1A] flex items-center justify-center">
+                    <Smartphone className="h-5 w-5" />
+                  </div>
+                  <span className="text-lg font-medium">App Development</span>
+                </div>
+                
+                <div className="card-border bg-[#111] p-6 card-hover flex items-center space-x-4">
+                  <div className="h-10 w-10 rounded-full bg-[#1A1A1A] flex items-center justify-center">
                     <PenTool className="h-5 w-5" />
                   </div>
                   <span className="text-lg font-medium">Graphics Design</span>
@@ -52,6 +59,13 @@ const Services = () => {
                   </div>
                   <span className="text-lg font-medium">Video Editing</span>
                 </div>
+
+                <div className="card-border bg-[#111] p-6 card-hover flex items-center space-x-4">
+                  <div className="h-10 w-10 rounded-full bg-[#1A1A1A] flex items-center justify-center">
+                    <Activity className="h-5 w-5" />
+                  </div>
+                  <span className="text-lg font-medium">Digital Marketing</span>
+                </div>
               </div>
             </AnimatedSection>
             
@@ -60,28 +74,42 @@ const Services = () => {
                 <div className="card-border bg-[#111] p-6 card-hover">
                   <h3 className="text-lg font-bold uppercase mb-4">Website Design</h3>
                   <p className="text-gray-400 text-sm mb-4">
-                    My website design services combine creativity and functionality to deliver mobile-friendly and user-friendly websites with seamless interactions. From concept to execution, I will bring your ideas to life, ensuring a seamless and engaging online experience for your audience.
+                    I craft distinctive and functional websites that adapt seamlessly to all devices, prioritizing user experience and intuitive navigation. From initial concept to final implementation, I transform your vision into a dynamic online presence that captivates and engages your audience.
+                  </p>
+                </div>
+                
+                <div className="card-border bg-[#111] p-6 card-hover">
+                  <h3 className="text-lg font-bold uppercase mb-4">App Development</h3>
+                  <p className="text-gray-400 text-sm mb-4">
+                    I develop custom mobile applications that combine cutting-edge technology with intuitive user experiences. Whether you need an Android, iOS, or cross-platform solution, I deliver scalable, feature-rich apps that meet your business objectives while exceeding user expectations.
                   </p>
                 </div>
                 
                 <div className="card-border bg-[#111] p-6 card-hover">
                   <h3 className="text-lg font-bold uppercase mb-4">Graphics Design</h3>
                   <p className="text-gray-400 text-sm mb-4">
-                    My graphics design services cover a spectrum of creative solutions. Whether it's designing eye-catching logos, engaging brochures, captivating illustrations, or attention-grabbing social media graphics, I bring a blend of artistic flair and strategic thinking to every project.
+                    My graphic design services span a diverse creative spectrum. From distinctive logo creation and compelling marketing materials to captivating illustrations and scroll-stopping social media visuals, I blend artistic innovation with strategic thinking to make your brand visually unforgettable.
                   </p>
                 </div>
                 
                 <div className="card-border bg-[#111] p-6 card-hover">
                   <h3 className="text-lg font-bold uppercase mb-4">Branding</h3>
                   <p className="text-gray-400 text-sm mb-4">
-                    A strong brand is the foundation of any successful business. My branding services focus on creating a distinctive identity for your business. I delve into your core values, mission, and target audience to develop a brand strategy and visual guidelines.
+                    A compelling brand forms the cornerstone of business success. My branding services focus on crafting a distinctive identity that resonates with your audience. I delve into your core values, mission, and target audience to develop a cohesive brand strategy and visual guidelines that tell your unique story.
                   </p>
                 </div>
                 
                 <div className="card-border bg-[#111] p-6 card-hover">
                   <h3 className="text-lg font-bold uppercase mb-4">Video Editing</h3>
                   <p className="text-gray-400 text-sm mb-4">
-                    My video editing services bring your footage to life. Whether it's for promotional videos, product showcases, or engaging content for your audience, I seamlessly edit, enhance, and polish your videos, ensuring they resonate with your target audience.
+                    I transform raw footage into compelling visual narratives. Whether for promotional campaigns, product showcases, or engaging content creation, I meticulously edit, enhance, and refine your videos to create impactful stories that connect with your intended audience and drive meaningful engagement.
+                  </p>
+                </div>
+                
+                <div className="card-border bg-[#111] p-6 card-hover">
+                  <h3 className="text-lg font-bold uppercase mb-4">Digital Marketing</h3>
+                  <p className="text-gray-400 text-sm mb-4">
+                    I implement strategic digital marketing campaigns that drive meaningful results. Leveraging SEO, content marketing, social media management, and analytics, I help your business increase online visibility, attract qualified leads, and convert prospects into loyal customers through data-driven approaches.
                   </p>
                 </div>
               </div>
