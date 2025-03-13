@@ -15,8 +15,7 @@ const ContactInfo = () => {
           </div>
           <div>
             <h3 className="text-gray-400 text-sm mb-2">EMAIL</h3>
-            <a href="mailto:oyedokunken@gmail.com" className="block text-white hover:underline">oyedokunken@gmail.com</a>
-            <a href="mailto:decimaltechgmails.com" className="block text-white hover:underline">decimaltech@gmail.com</a>
+            <a href="mailto:oyedokunken@gmail.com" className="block text-white hover:underline">nezawinnie@gmail.com</a>
           </div>
         </div>
         
@@ -26,8 +25,7 @@ const ContactInfo = () => {
           </div>
           <div>
             <h3 className="text-gray-400 text-sm mb-2">CONTACT</h3>
-            <a href="tel:+2348028134942" className="block text-white hover:underline">+234 8028134942</a>
-            <a href="tel:+2348144745225" className="block text-white hover:underline">+234 8144745225</a>
+            <a href="tel:+250784258883" className="block text-white hover:underline">+250 784 258 883</a>
           </div>
         </div>
         
@@ -37,7 +35,7 @@ const ContactInfo = () => {
           </div>
           <div>
             <h3 className="text-gray-400 text-sm mb-2">ADDRESS</h3>
-            <p className="text-white">1507, Peace Avenue, FUTA South Gate, Akure, Ondo State</p>
+            <p className="text-white">Kigali, Rwanda</p>
           </div>
         </div>
       </div>
