@@ -29,14 +29,14 @@ const Services = () => {
                   <div className="h-10 w-10 rounded-full bg-[#1A1A1A] flex items-center justify-center">
                     <Laptop className="h-5 w-5" />
                   </div>
-                  <span className="text-lg font-medium">Website Design</span>
+                  <span className="text-lg font-medium">UI/UX Design</span>
                 </div>
                 
                 <div className="card-border bg-[#111] p-6 card-hover flex items-center space-x-4">
                   <div className="h-10 w-10 rounded-full bg-[#1A1A1A] flex items-center justify-center">
                     <Smartphone className="h-5 w-5" />
                   </div>
-                  <span className="text-lg font-medium">App Development</span>
+                  <span className="text-lg font-medium">Web & App Development</span>
                 </div>
                 
                 <div className="card-border bg-[#111] p-6 card-hover flex items-center space-x-4">
@@ -72,14 +72,14 @@ const Services = () => {
             <AnimatedSection animation="fade-in" delay={0.3} className="col-span-1 md:col-span-3">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="card-border bg-[#111] p-6 card-hover">
-                  <h3 className="text-lg font-bold uppercase mb-4">Website Design</h3>
+                  <h3 className="text-lg font-bold uppercase mb-4">UI/UX Design</h3>
                   <p className="text-gray-400 text-sm mb-4">
                     I craft distinctive and functional websites that adapt seamlessly to all devices, prioritizing user experience and intuitive navigation. From initial concept to final implementation, I transform your vision into a dynamic online presence that captivates and engages your audience.
                   </p>
                 </div>
                 
                 <div className="card-border bg-[#111] p-6 card-hover">
-                  <h3 className="text-lg font-bold uppercase mb-4">App Development</h3>
+                  <h3 className="text-lg font-bold uppercase mb-4">Web & App Development</h3>
                   <p className="text-gray-400 text-sm mb-4">
                     I develop custom mobile applications that combine cutting-edge technology with intuitive user experiences. Whether you need an Android, iOS, or cross-platform solution, I deliver scalable, feature-rich apps that meet your business objectives while exceeding user expectations.
                   </p>

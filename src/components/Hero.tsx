@@ -19,20 +19,20 @@ const Hero = () => {
       <div className="container max-w-6xl mx-auto">
         <AnimatedSection animation="fade-in" delay={0.2} className="mb-8 md:mb-12">
           <div className="badge bg-accent text-accent-foreground">
-            UI/UX Designer & Developer
+            Digital Solution Strategist
           </div>
         </AnimatedSection>
         
         <AnimatedSection animation="fade-in" delay={0.4}>
           <h1 className="heading-xl max-w-4xl mb-6 md:mb-8">
-            Crafting <span className="text-primary">Digital Experiences</span> with Precision & Purpose
+            Transforming <span className="text-primary">Digital Visions</span> into Strategic Realities
           </h1>
         </AnimatedSection>
         
         <AnimatedSection animation="fade-in" delay={0.6}>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-12 text-balance">
-            I'm a multidisciplinary designer and developer specializing in 
-            UI/UX design, web & app development, identity design, and social media management.
+            I'm a multidisciplinary professional specializing in 
+            UI/UX design, web & app development, brand strategy, digital marketing, and communication solutions.
           </p>
         </AnimatedSection>
         
