@@ -9,7 +9,13 @@ const SocialLinks = () => {
       <h2 className="text-2xl font-bold mb-6">SOCIAL INFO</h2>
       <div className="grid grid-cols-3 gap-4">
         <a href="#" className="social-icon">
-          <Behance className="h-5 w-5" />
+          <Facebook className="h-5 w-5" />
+        </a>
+        <a href="#" className="social-icon">
+          <Twitter className="h-5 w-5" />
+        </a>
+        <a href="#" className="social-icon">
+          <Instagram className="h-5 w-5" />
         </a>
         <a href="#" className="social-icon">
           <Phone className="h-5 w-5" />
