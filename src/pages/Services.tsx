@@ -74,7 +74,7 @@ const Services = () => {
                 <div className="card-border bg-[#111] p-6 card-hover">
                   <h3 className="text-lg font-bold uppercase mb-4">UI/UX Design</h3>
                   <p className="text-gray-400 text-sm mb-4">
-                    I craft distinctive and functional websites that adapt seamlessly to all devices, prioritizing user experience and intuitive navigation. From initial concept to final implementation, I transform your vision into a dynamic online presence that captivates and engages your audience.
+                    I create professional websites with clean designs and intuitive user experiences that effectively represent your brand.
                   </p>
                 </div>
                 
@@ -88,14 +88,14 @@ const Services = () => {
                 <div className="card-border bg-[#111] p-6 card-hover">
                   <h3 className="text-lg font-bold uppercase mb-4">Graphics Design</h3>
                   <p className="text-gray-400 text-sm mb-4">
-                    My graphic design services span a diverse creative spectrum. From distinctive logo creation and compelling marketing materials to captivating illustrations and scroll-stopping social media visuals, I blend artistic innovation with strategic thinking to make your brand visually unforgettable.
+                    From logos to marketing materials, I deliver high-quality graphics that communicate your message visually.
                   </p>
                 </div>
                 
                 <div className="card-border bg-[#111] p-6 card-hover">
                   <h3 className="text-lg font-bold uppercase mb-4">Branding</h3>
                   <p className="text-gray-400 text-sm mb-4">
-                    A compelling brand forms the cornerstone of business success. My branding services focus on crafting a distinctive identity that resonates with your audience. I delve into your core values, mission, and target audience to develop a cohesive brand strategy and visual guidelines that tell your unique story.
+                    I develop comprehensive brand identities that help businesses stand out in their market and connect with their audience.
                   </p>
                 </div>
                 
@@ -109,7 +109,7 @@ const Services = () => {
                 <div className="card-border bg-[#111] p-6 card-hover">
                   <h3 className="text-lg font-bold uppercase mb-4">Digital Marketing</h3>
                   <p className="text-gray-400 text-sm mb-4">
-                    I implement strategic digital marketing campaigns that drive meaningful results. Leveraging SEO, content marketing, social media management, and analytics, I help your business increase online visibility, attract qualified leads, and convert prospects into loyal customers through data-driven approaches.
+                    I craft user interfaces that are not only beautiful but functional, enhancing user engagement and satisfaction.
                   </p>
                 </div>
               </div>

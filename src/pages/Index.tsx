@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { ArrowRight, Mail, MoveRight, ExternalLink, MousePointer } from "lucide-react";
 import Header from "@/components/Header";
@@ -45,18 +44,18 @@ const Index = () => {
   const services = [
     { 
       id: 1, 
-      title: "Website Design", 
+      title: "UI/UX Design", 
       description: "I create professional websites with clean designs and intuitive user experiences that effectively represent your brand." 
     },
     { 
       id: 2, 
-      title: "Graphics Design", 
-      description: "From logos to marketing materials, I deliver high-quality graphics that communicate your message visually." 
+      title: "Web & App Development", 
+      description: "I develop custom mobile applications that combine cutting-edge technology with intuitive user experiences." 
     },
     { 
       id: 3, 
-      title: "UI/UX Design", 
-      description: "I craft user interfaces that are not only beautiful but functional, enhancing user engagement and satisfaction." 
+      title: "Graphics Design", 
+      description: "From logos to marketing materials, I deliver high-quality graphics that communicate your message visually." 
     },
     { 
       id: 4, 
@@ -164,40 +163,20 @@ const Index = () => {
               </div>
               
               <div className="md:w-1/2 card-border bg-[#111] p-8 rounded-xl">
-                <h3 className="text-xl font-bold mb-6">Experience & Education</h3>
+                <h3 className="text-xl font-bold mb-6">About My Approach</h3>
                 
-                <div className="space-y-8">
-                  <div>
-                    <div className="flex justify-between items-center mb-2">
-                      <h4 className="text-lg font-semibold">Senior Developer</h4>
-                      <span className="text-gray-400">2022 - Present</span>
-                    </div>
-                    <div className="text-sm text-gray-400">Decima Digital</div>
-                  </div>
+                <div className="space-y-6">
+                  <p className="text-gray-400">
+                    I believe in a collaborative approach to digital projects. By understanding your business goals and target audience, I can create solutions that not only look good but also deliver results.
+                  </p>
                   
-                  <div>
-                    <div className="flex justify-between items-center mb-2">
-                      <h4 className="text-lg font-semibold">Frontend Developer</h4>
-                      <span className="text-gray-400">2019 - 2022</span>
-                    </div>
-                    <div className="text-sm text-gray-400">WebLine Studios</div>
-                  </div>
+                  <p className="text-gray-400">
+                    My process is iterative and transparent, ensuring that we're always aligned on the vision and direction of your project. I prioritize clear communication and regular updates throughout our collaboration.
+                  </p>
                   
-                  <div>
-                    <div className="flex justify-between items-center mb-2">
-                      <h4 className="text-lg font-semibold">UI Designer</h4>
-                      <span className="text-gray-400">2018 - 2019</span>
-                    </div>
-                    <div className="text-sm text-gray-400">Digital Artisans</div>
-                  </div>
-                  
-                  <div className="pt-4 border-t border-gray-800">
-                    <div className="flex justify-between items-center mb-2">
-                      <h4 className="text-lg font-semibold">BSc, Computer Science</h4>
-                      <span className="text-gray-400">2015 - 2019</span>
-                    </div>
-                    <div className="text-sm text-gray-400">Federal University of Technology, Akure</div>
-                  </div>
+                  <p className="text-gray-400">
+                    Each project is unique, and I tailor my approach to meet your specific needs, whether that's a complete digital transformation or a targeted enhancement to your existing digital presence.
+                  </p>
                 </div>
               </div>
             </div>
