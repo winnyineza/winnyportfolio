@@ -12,10 +12,10 @@ const SocialLinks = () => {
           <Behance className="h-5 w-5" />
         </a>
         <a href="#" className="social-icon">
-          <Github className="h-5 w-5" />
+          <Phone className="h-5 w-5" />
         </a>
         <a href="#" className="social-icon">
-          <Whatsapp className="h-5 w-5" />
+          <Github className="h-5 w-5" />
         </a>
         <a href="#" className="social-icon">
           <Linkedin className="h-5 w-5" />
