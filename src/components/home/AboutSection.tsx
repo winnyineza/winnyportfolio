@@ -21,11 +21,11 @@ const AboutSection = () => {
               </div>
               
               <p className="text-gray-400 mb-6">
-                I am a Frontend Developer and UI/UX Designer with a passion for creating digital experiences that are both visually appealing and functional. With a strong emphasis on user-centered design principles, I strive to bridge the gap between user needs and business goals.
+                As a Digital Solution Strategist, I offer a wide range of services including UI/UX Design, Web & App Development, Graphics Design, Branding, Video Editing, and Digital Marketing. With a holistic approach to digital strategy, I focus on creating cohesive, user-centered solutions that not only look great but also perform excellently, driving tangible results for your business.
               </p>
               
               <p className="text-gray-400 mb-6">
-                My approach combines creative design thinking with technical expertise, allowing me to translate complex requirements into clean, maintainable code and intuitive interfaces. I believe that attention to detail and a deep understanding of the user journey are essential for creating meaningful digital products.
+                From designing intuitive websites and mobile apps to building strong brand identities and compelling digital content, I combine creative thinking with technical expertise to solve complex challenges. Whether you're looking to create a visually stunning user interface, develop a feature-rich mobile app, or boost your online presence with digital marketing, I help transform your ideas into impactful digital experiences.
               </p>
               
               <p className="text-gray-400 mb-8">
