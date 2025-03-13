@@ -106,15 +106,17 @@ const About = () => {
                 <div className="mt-12">
                   <h2 className="text-2xl font-bold mb-6">ACADEMIC CREDENTIALS</h2>
                   
-                  <div className="space-y-6">
-                    <div>
-                      <div className="flex justify-between items-center mb-2">
-                        <h3 className="text-xl font-semibold">BSc, Software Engineering</h3>
-                        <span className="text-blue-500">2022 - Present</span>
-                      </div>
-                      <div className="text-sm text-gray-400">African Leadership University</div>
+                  <div className="mb-8">
+                    <div className="flex justify-between items-center mb-2">
+                      <h3 className="text-xl font-semibold">BSc, Software Engineering</h3>
+                      <span className="text-blue-500">2022 - Present</span>
                     </div>
-                    
+                    <div className="text-sm text-gray-400">African Leadership University</div>
+                  </div>
+                  
+                  <h2 className="text-2xl font-bold mb-6">CERTIFICATIONS</h2>
+                  
+                  <div className="space-y-6">
                     <div>
                       <div className="flex justify-between items-center mb-2">
                         <h3 className="text-xl font-semibold">Data Science Professional Certification</h3>

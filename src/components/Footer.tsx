@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="flex flex-col items-center">
           <div className="mb-6">
-            <Link to="/" className="text-2xl font-bold text-white">Oyedokun</Link>
+            <Link to="/" className="text-2xl font-bold text-white">Winny</Link>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-8 w-full max-w-md">
@@ -22,7 +22,7 @@ const Footer = () => {
           <div className="text-sm text-gray-400 flex items-center">
             <span>© 2023 With</span>
             <Heart className="h-4 w-4 mx-1 text-red-500" />
-            <span>by <a href="#" className="text-white hover:underline">Oyedokun Kehinde</a></span>
+            <span>by <a href="#" className="text-white hover:underline">Winny Didine Ineza</a></span>
           </div>
         </div>
       </div>

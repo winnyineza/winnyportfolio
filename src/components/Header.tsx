@@ -43,7 +43,7 @@ const Header = () => {
     >
       <div className="container mx-auto flex items-center justify-between">
         <Link to="/" className="text-xl font-bold text-white">
-          Oyedokun
+          Winny
         </Link>
 
         {isMobile ? (
