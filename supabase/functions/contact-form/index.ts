@@ -49,7 +49,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send email notification
     const emailResponse = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
-      to: "inezawinny@gmail.com", // Replace with your email
+      to: "nezawinnie@gmail.com", // Updated email address
       subject: `New Portfolio Contact: ${subject}`,
       html: `
         <h1>New Contact Form Submission</h1>
