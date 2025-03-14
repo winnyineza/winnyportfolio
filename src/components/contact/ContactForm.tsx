@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import AnimatedSection from "@/components/AnimatedSection";
 import { toast } from "@/hooks/use-toast";
+import { Info } from "lucide-react";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -50,6 +51,13 @@ const ContactForm = () => {
         </div>
       </div>
       
+      <div className="bg-purple-900/20 border border-purple-800/30 rounded-md px-4 py-3 mb-6 flex">
+        <Info className="h-5 w-5 text-purple-400 mr-3 flex-shrink-0 mt-0.5" />
+        <div className="text-sm text-gray-300">
+          <p>Currently, form submissions are for demonstration purposes only. When implemented on a production server, you would receive these messages via email or in a database that you can access through a dashboard.</p>
+        </div>
+      </div>
+      
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <input
@@ -60,7 +68,7 @@ const ContactForm = () => {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full bg-[#1A1A1A] border border-[#333] rounded-md px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-500"
+            className="w-full bg-[#1A1A1A] border border-[#333] rounded-md px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
           />
         </div>
         
@@ -73,7 +81,7 @@ const ContactForm = () => {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full bg-[#1A1A1A] border border-[#333] rounded-md px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-500"
+            className="w-full bg-[#1A1A1A] border border-[#333] rounded-md px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
           />
         </div>
         
@@ -86,7 +94,7 @@ const ContactForm = () => {
             required
             value={formData.subject}
             onChange={handleChange}
-            className="w-full bg-[#1A1A1A] border border-[#333] rounded-md px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-500"
+            className="w-full bg-[#1A1A1A] border border-[#333] rounded-md px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
           />
         </div>
         
@@ -99,7 +107,7 @@ const ContactForm = () => {
             required
             value={formData.message}
             onChange={handleChange}
-            className="w-full bg-[#1A1A1A] border border-[#333] rounded-md px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-500"
+            className="w-full bg-[#1A1A1A] border border-[#333] rounded-md px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
           ></textarea>
         </div>
         
@@ -107,7 +115,7 @@ const ContactForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-[#1A1A1A] hover:bg-[#333] border border-[#333] rounded-md py-3 text-white font-medium transition-colors duration-300"
+            className="w-full bg-purple-700 hover:bg-purple-600 border border-purple-600 rounded-md py-3 text-white font-medium transition-colors duration-300"
           >
             {isSubmitting ? "Connecting..." : "Initiate Contact"}
           </button>

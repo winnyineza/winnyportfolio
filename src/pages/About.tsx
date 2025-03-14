@@ -3,7 +3,7 @@ import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
-import { Download, Facebook, Twitter, Instagram, Linkedin, Github } from "lucide-react";
+import { Download, Github, Linkedin, Phone, Palmtree } from "lucide-react";
 
 // Use the profile image uploaded
 const profileImage = "/lovable-uploads/c50f855e-d8b5-45cd-8fa8-9105aeb8ee8a.png";
@@ -31,23 +31,23 @@ const About = () => {
                   <h2 className="text-xl font-bold mb-4">Winny Didine Ineza</h2>
                   
                   <div className="flex justify-center space-x-3 mb-6">
-                    <a href="https://www.linkedin.com/in/winny-didine-ineza" target="_blank" className="social-icon">
-                      <Linkedin className="h-4 w-4" />
-                    </a>
-                    <a href="#" className="social-icon">
-                      <Twitter className="h-4 w-4" />
-                    </a>
-                    <a href="#" className="social-icon">
-                      <Instagram className="h-4 w-4" />
-                    </a>
-                    <a href="#" className="social-icon">
+                    <a href="https://github.com/winny-ineza" target="_blank" rel="noopener noreferrer" className="social-icon">
                       <Github className="h-4 w-4" />
+                    </a>
+                    <a href="https://behance.net/winny-ineza" target="_blank" rel="noopener noreferrer" className="social-icon">
+                      <Palmtree className="h-4 w-4" />
+                    </a>
+                    <a href="tel:+250788000000" className="social-icon">
+                      <Phone className="h-4 w-4" />
+                    </a>
+                    <a href="https://linkedin.com/in/winny-didine-ineza" target="_blank" rel="noopener noreferrer" className="social-icon">
+                      <Linkedin className="h-4 w-4" />
                     </a>
                   </div>
                   
                   <a 
                     href="#"
-                    className="inline-flex items-center justify-center gap-2 bg-zinc-800 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-zinc-700 transition-all duration-300 w-full"
+                    className="inline-flex items-center justify-center gap-2 bg-purple-700 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-purple-600 transition-all duration-300 w-full"
                   >
                     <Download className="h-4 w-4" />
                     View Resume
@@ -72,7 +72,7 @@ const About = () => {
                   <div>
                     <div className="flex justify-between items-center mb-2">
                       <h3 className="text-xl font-semibold">Operations Specialist</h3>
-                      <span className="text-blue-500">2023 - Present</span>
+                      <span className="text-purple-500">2023 - Present</span>
                     </div>
                     <div className="text-sm text-gray-400 mb-3">Job In Rwanda</div>
                     <p className="text-gray-300 text-sm">
@@ -83,7 +83,7 @@ const About = () => {
                   <div>
                     <div className="flex justify-between items-center mb-2">
                       <h3 className="text-xl font-semibold">Sales & Marketing Strategist</h3>
-                      <span className="text-blue-500">2021 - 2023</span>
+                      <span className="text-purple-500">2021 - 2023</span>
                     </div>
                     <div className="text-sm text-gray-400 mb-3">Water Access Rwanda</div>
                     <p className="text-gray-300 text-sm">
@@ -94,7 +94,7 @@ const About = () => {
                   <div>
                     <div className="flex justify-between items-center mb-2">
                       <h3 className="text-xl font-semibold">Technical Support Specialist</h3>
-                      <span className="text-blue-500">2020</span>
+                      <span className="text-purple-500">2020</span>
                     </div>
                     <div className="text-sm text-gray-400 mb-3">Réseau Des Femmes</div>
                     <p className="text-gray-300 text-sm">
@@ -109,51 +109,31 @@ const About = () => {
                   <div className="mb-8">
                     <div className="flex justify-between items-center mb-2">
                       <h3 className="text-xl font-semibold">BSc, Software Engineering</h3>
-                      <span className="text-blue-500">2022 - Present</span>
+                      <span className="text-purple-500">2022 - Present</span>
                     </div>
                     <div className="text-sm text-gray-400">African Leadership University</div>
                   </div>
                   
-                  <h2 className="text-2xl font-bold mb-6">CERTIFICATIONS</h2>
-                  
-                  <div className="space-y-6">
+                  <div className="mt-12 grid grid-cols-2 gap-8">
                     <div>
-                      <div className="flex justify-between items-center mb-2">
-                        <h3 className="text-xl font-semibold">Data Science Professional Certification</h3>
-                        <span className="text-blue-500">2024</span>
+                      <h2 className="text-xl font-bold mb-4">CORE COMPETENCIES</h2>
+                      <div className="space-y-2">
+                        <div className="text-gray-300">Digital Marketing Architecture</div>
+                        <div className="text-gray-300">Software Development</div>
+                        <div className="text-gray-300">Strategic Initiative Management</div>
+                        <div className="text-gray-300">Client Experience Optimization</div>
+                        <div className="text-gray-300">Technical Infrastructure Support</div>
+                        <div className="text-gray-300">Revenue Growth Strategies</div>
                       </div>
-                      <div className="text-sm text-gray-400">IBM</div>
                     </div>
                     
                     <div>
-                      <div className="flex justify-between items-center mb-2">
-                        <h3 className="text-xl font-semibold">Network Automation Engineering</h3>
-                        <span className="text-blue-500">2024</span>
+                      <h2 className="text-xl font-bold mb-4">LANGUAGE PROFICIENCY</h2>
+                      <div className="space-y-2">
+                        <div className="text-gray-300">Kinyarwanda (Native Fluency)</div>
+                        <div className="text-gray-300">English (Professional Fluency)</div>
+                        <div className="text-gray-300">French (Professional Working Proficiency)</div>
                       </div>
-                      <div className="text-sm text-gray-400">Cisco</div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="mt-12 grid grid-cols-2 gap-8">
-                  <div>
-                    <h2 className="text-xl font-bold mb-4">CORE COMPETENCIES</h2>
-                    <div className="space-y-2">
-                      <div className="text-gray-300">Digital Marketing Architecture</div>
-                      <div className="text-gray-300">Software Development</div>
-                      <div className="text-gray-300">Strategic Initiative Management</div>
-                      <div className="text-gray-300">Client Experience Optimization</div>
-                      <div className="text-gray-300">Technical Infrastructure Support</div>
-                      <div className="text-gray-300">Revenue Growth Strategies</div>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <h2 className="text-xl font-bold mb-4">LANGUAGE PROFICIENCY</h2>
-                    <div className="space-y-2">
-                      <div className="text-gray-300">Kinyarwanda (Native Fluency)</div>
-                      <div className="text-gray-300">English (Professional Fluency)</div>
-                      <div className="text-gray-300">French (Professional Working Proficiency)</div>
                     </div>
                   </div>
                 </div>

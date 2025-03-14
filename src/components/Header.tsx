@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X, Download, Phone, Github, Linkedin, Palmtree } from "lucide-react";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,6 +16,7 @@ const Header = () => {
     { name: "About", href: "/about", path: "/about" },
     { name: "Services", href: "/services", path: "/services" },
     { name: "Works", href: "/works", path: "/works" },
+    { name: "Certifications", href: "/certifications", path: "/certifications" },
     { name: "Contact", href: "/contact", path: "/contact" },
   ];
 
@@ -76,13 +77,20 @@ const Header = () => {
                       {link.name}
                     </Link>
                   ))}
-                  <a 
-                    href="#"
-                    className="mt-6 flex items-center gap-2 bg-zinc-800 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-zinc-700 transition-all duration-300"
-                  >
-                    <Download className="h-4 w-4" />
-                    Download CV
-                  </a>
+                  <div className="flex space-x-4 mt-8">
+                    <a href="https://github.com/winny-ineza" target="_blank" rel="noopener noreferrer" className="social-icon">
+                      <Github className="h-5 w-5" />
+                    </a>
+                    <a href="https://behance.net/winny-ineza" target="_blank" rel="noopener noreferrer" className="social-icon">
+                      <Palmtree className="h-5 w-5" />
+                    </a>
+                    <a href="tel:+250788000000" className="social-icon">
+                      <Phone className="h-5 w-5" />
+                    </a>
+                    <a href="https://linkedin.com/in/winny-didine-ineza" target="_blank" rel="noopener noreferrer" className="social-icon">
+                      <Linkedin className="h-5 w-5" />
+                    </a>
+                  </div>
                 </nav>
               </div>
             )}
@@ -105,7 +113,7 @@ const Header = () => {
             </nav>
             <a 
               href="#"
-              className="flex items-center gap-2 bg-zinc-800 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-zinc-700 transition-all duration-300"
+              className="flex items-center gap-2 bg-purple-700 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-purple-600 transition-all duration-300"
             >
               <Download className="h-4 w-4" />
               Download CV

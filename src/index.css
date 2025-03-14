@@ -42,7 +42,7 @@
   }
 
   ::selection {
-    @apply bg-gray-700 text-white;
+    @apply bg-purple-700 text-white;
   }
 }
 
@@ -80,7 +80,7 @@
   }
   
   .text-gradient-blue {
-    @apply text-blue-500;
+    @apply text-purple-500;
   }
   
   .social-icon {

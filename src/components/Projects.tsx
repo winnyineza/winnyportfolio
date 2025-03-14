@@ -60,7 +60,7 @@ const Projects = () => {
         <AnimatedSection className="mb-16">
           <span className="inline-block bg-black text-white px-4 py-1 mb-4 border border-gray-800">Selected Work</span>
           <h2 className="heading-md mb-5 text-black">
-            Transforming Ideas into <span className="bg-gray-200 px-2">Impact</span>
+            Transforming Ideas into <span className="bg-purple-100 px-2">Impact</span>
           </h2>
           <p className="text-gray-700 max-w-2xl">
             A curated collection of my projects spanning UI/UX design, 
