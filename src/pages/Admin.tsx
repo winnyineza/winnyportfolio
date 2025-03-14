@@ -10,12 +10,17 @@ import WorksAdmin from "@/components/admin/WorksAdmin";
 import CertificationsAdmin from "@/components/admin/CertificationsAdmin";
 import { AlertCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 const Admin = () => {
   const { toast } = useToast();
   const navigate = useNavigate();
   const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoginLoading, setIsLoginLoading] = useState(false);
 
   useEffect(() => {
     const checkAdminStatus = async () => {
@@ -52,20 +57,51 @@ const Admin = () => {
     checkAdminStatus();
   }, []);
 
-  const handleLogin = async () => {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: window.location.origin + '/admin'
-      }
-    });
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoginLoading(true);
     
-    if (error) {
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password
+      });
+      
+      if (error) {
+        throw error;
+      }
+      
+      // Check if the user is an admin
+      const { data: adminData, error: adminError } = await supabase
+        .from('admin_users')
+        .select('id')
+        .eq('id', data.user.id)
+        .single();
+      
+      if (adminError || !adminData) {
+        await supabase.auth.signOut();
+        toast({
+          variant: "destructive",
+          title: "Access denied",
+          description: "Your account does not have admin privileges."
+        });
+        return;
+      }
+      
+      toast({
+        title: "Login successful",
+        description: "Welcome to the admin panel."
+      });
+      
+      setIsAdmin(true);
+    } catch (error: any) {
       toast({
         variant: "destructive",
-        title: "Authentication failed",
-        description: error.message
+        title: "Login failed",
+        description: error.message || "An error occurred during login."
       });
+    } finally {
+      setIsLoginLoading(false);
     }
   };
 
@@ -101,11 +137,54 @@ const Admin = () => {
             <div className="bg-[#111] p-8 rounded-xl border border-gray-800">
               <AlertCircle className="h-16 w-16 text-yellow-500 mx-auto mb-4" />
               <h1 className="text-2xl font-bold mb-4">Admin Access Required</h1>
-              <p className="mb-6 text-gray-400">You need to log in with an admin account to access this page.</p>
-              <Button onClick={handleLogin} className="bg-purple-600 hover:bg-purple-700">
-                Login with Google
-              </Button>
-              <p className="mt-4 text-sm text-gray-500">If you're not an admin, please contact the site owner.</p>
+              <p className="mb-6 text-gray-400">Login with your admin credentials to access this page.</p>
+              
+              <form onSubmit={handleLogin} className="space-y-4 text-left">
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input 
+                    id="email"
+                    type="email" 
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="bg-[#222] border-gray-700"
+                    required
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="password">Password</Label>
+                  <Input 
+                    id="password"
+                    type="password" 
+                    value={password} 
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Enter your password"
+                    className="bg-[#222] border-gray-700"
+                    required
+                  />
+                </div>
+                
+                <Button 
+                  type="submit" 
+                  className="w-full bg-purple-600 hover:bg-purple-700"
+                  disabled={isLoginLoading}
+                >
+                  {isLoginLoading ? (
+                    <>
+                      <span className="animate-spin mr-2">⟳</span> 
+                      Logging in...
+                    </>
+                  ) : (
+                    "Login"
+                  )}
+                </Button>
+              </form>
+              
+              <p className="mt-4 text-sm text-gray-500">
+                If you don't have admin credentials, please contact the site owner.
+              </p>
             </div>
           </div>
         </main>
