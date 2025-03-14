@@ -3,7 +3,7 @@ import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
-import { Download, Github, Linkedin, Phone, Palmtree } from "lucide-react";
+import { Download, Github, Linkedin, Phone, Behance } from "lucide-react";
 
 // Use the profile image uploaded
 const profileImage = "/lovable-uploads/c50f855e-d8b5-45cd-8fa8-9105aeb8ee8a.png";
