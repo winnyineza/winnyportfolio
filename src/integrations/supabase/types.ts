@@ -9,6 +9,60 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      admin_users: {
+        Row: {
+          created_at: string
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+        }
+        Relationships: []
+      }
+      certifications: {
+        Row: {
+          created_at: string
+          credential_id: string | null
+          credential_url: string | null
+          date_issued: string | null
+          expiry_date: string | null
+          id: string
+          image_url: string | null
+          issuer: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          credential_id?: string | null
+          credential_url?: string | null
+          date_issued?: string | null
+          expiry_date?: string | null
+          id?: string
+          image_url?: string | null
+          issuer: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          credential_id?: string | null
+          credential_url?: string | null
+          date_issued?: string | null
+          expiry_date?: string | null
+          id?: string
+          image_url?: string | null
+          issuer?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       contact_messages: {
         Row: {
           created_at: string
@@ -36,12 +90,50 @@ export type Database = {
         }
         Relationships: []
       }
+      works: {
+        Row: {
+          category: string | null
+          created_at: string
+          description: string
+          id: string
+          image_url: string | null
+          project_url: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category?: string | null
+          created_at?: string
+          description: string
+          id?: string
+          image_url?: string | null
+          project_url?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string | null
+          created_at?: string
+          description?: string
+          id?: string
+          image_url?: string | null
+          project_url?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      is_admin: {
+        Args: {
+          user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
       [_ in never]: never
