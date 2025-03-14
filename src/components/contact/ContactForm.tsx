@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import AnimatedSection from "@/components/AnimatedSection";
 import { toast } from "@/hooks/use-toast";
 import { Info } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -21,19 +22,37 @@ const ContactForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // Call the edge function to send email and store the message
+      const { data, error } = await supabase.functions.invoke("contact-form", {
+        body: formData,
+      });
+
+      if (error) {
+        throw new Error(error.message || "Failed to send message");
+      }
+
       toast({
         title: "Message delivered!",
         description: "Your message has been successfully sent. I'll be in touch shortly.",
       });
+      
+      // Reset form
       setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 1500);
+    } catch (error: any) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Error sending message",
+        description: error.message || "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -48,13 +67,6 @@ const ContactForm = () => {
             <path d="M12 17L17 12L12 7" stroke="white" strokeOpacity="0.5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M7 12H17" stroke="white" strokeOpacity="0.5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
-        </div>
-      </div>
-      
-      <div className="bg-purple-900/20 border border-purple-800/30 rounded-md px-4 py-3 mb-6 flex">
-        <Info className="h-5 w-5 text-purple-400 mr-3 flex-shrink-0 mt-0.5" />
-        <div className="text-sm text-gray-300">
-          <p>Currently, form submissions are for demonstration purposes only. When implemented on a production server, you would receive these messages via email or in a database that you can access through a dashboard.</p>
         </div>
       </div>
       
@@ -117,7 +129,7 @@ const ContactForm = () => {
             disabled={isSubmitting}
             className="w-full bg-purple-700 hover:bg-purple-600 border border-purple-600 rounded-md py-3 text-white font-medium transition-colors duration-300"
           >
-            {isSubmitting ? "Connecting..." : "Initiate Contact"}
+            {isSubmitting ? "Sending..." : "Initiate Contact"}
           </button>
         </div>
       </form>
