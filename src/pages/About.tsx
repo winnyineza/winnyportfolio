@@ -71,7 +71,7 @@ const About = () => {
                 <div className="space-y-10">
                   <div>
                     <div className="flex justify-between items-center mb-2">
-                      <h3 className="text-xl font-semibold">Operations Specialist</h3>
+                      <h3 className="text-xl font-semibold">Operations Assistant</h3>
                       <span className="text-purple-500">2023 - Present</span>
                     </div>
                     <div className="text-sm text-gray-400 mb-3">Job In Rwanda</div>
@@ -82,7 +82,7 @@ const About = () => {
                   
                   <div>
                     <div className="flex justify-between items-center mb-2">
-                      <h3 className="text-xl font-semibold">Sales & Marketing Strategist</h3>
+                      <h3 className="text-xl font-semibold">Jr. Sales & Marketing Officer</h3>
                       <span className="text-purple-500">2021 - 2023</span>
                     </div>
                     <div className="text-sm text-gray-400 mb-3">Water Access Rwanda</div>
