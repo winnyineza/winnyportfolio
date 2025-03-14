@@ -78,16 +78,16 @@ const Header = () => {
                     </Link>
                   ))}
                   <div className="flex space-x-4 mt-8">
-                    <a href="https://github.com/winny-ineza" target="_blank" rel="noopener noreferrer" className="social-icon">
+                    <a href="https://github.com/winnyineza" target="_blank" rel="noopener noreferrer" className="social-icon">
                       <Github className="h-5 w-5" />
                     </a>
-                    <a href="https://behance.net/winny-ineza" target="_blank" rel="noopener noreferrer" className="social-icon">
+                    <a href="https://www.behance.net/winnydineza1/" target="_blank" rel="noopener noreferrer" className="social-icon">
                       <Palmtree className="h-5 w-5" />
                     </a>
-                    <a href="tel:+250788000000" className="social-icon">
+                    <a href="+250784258883" className="social-icon">
                       <Phone className="h-5 w-5" />
                     </a>
-                    <a href="https://linkedin.com/in/winny-didine-ineza" target="_blank" rel="noopener noreferrer" className="social-icon">
+                    <a href="https://www.linkedin.com/in/winnydid/" target="_blank" rel="noopener noreferrer" className="social-icon">
                       <Linkedin className="h-5 w-5" />
                     </a>
                   </div>
